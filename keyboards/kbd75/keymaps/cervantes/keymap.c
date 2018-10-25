@@ -6,6 +6,12 @@
 #define MS_SPC LT(2,KC_SPC)
 #define CAPSCTL CTL_T(KC_CAPS)
 
+void matrix_init_user(void) {
+#ifdef RGBLIGHT_ENABLE
+    rgblight_init();
+#endif
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT(
