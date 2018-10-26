@@ -6,6 +6,16 @@
 #define MS_SPC LT(2,KC_SPC)
 #define CAPSCTL CTL_T(KC_CAPS)
 
+#define MD_PLAN    RGB_MODE_PLAIN
+#define MD_BRTH    RGB_MODE_BREATHE
+#define MD_RAIN    RGB_MODE_RAINBOW
+#define MD_SWRL    RGB_MODE_SWIRL
+#define MD_SNEK    RGB_MODE_SNAKE
+#define MD_KNIT    RGB_MODE_KNIGHT
+#define MD_XMAS    RGB_MODE_XMAS
+#define MD_GRAD    RGB_MODE_GRADIENT
+#define MD_TEST    RGB_MODE_RGBTEST
+
 void matrix_init_user(void) {
 #ifdef RGBLIGHT_ENABLE
     rgblight_init();
@@ -25,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT(
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,  KC_SLCK,  KC_INS,
-    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RESET,    _______,
+    _______,  MD_PLAN,  MD_BRTH,  MD_RAIN,  MD_SWRL,  MD_SNEK,  MD_KNIT,  MD_XMAS,  MD_GRAD,  MD_TEST,  _______,  _______,  _______,  _______,  RESET,    _______,
     _______,  RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD,  _______,  _______,  _______,  _______,  _______,            _______,
     KC_CAPS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,  _______,
     _______,  _______,  _______,  _______,  BL_DEC,   BL_TOGG,  BL_INC,   BL_STEP,  _______,  _______,  _______,  _______,  _______,            KC_VOLU,  KC_MUTE,
