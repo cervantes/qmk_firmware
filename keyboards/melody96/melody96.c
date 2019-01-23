@@ -2,10 +2,10 @@
 
 void led_set_user(uint8_t usb_led) {
 
-	if (usb_led & (1 << USB_LED_NUM_LOCK)) {
-		DDRC |= (1 << 6); PORTC &= ~(1 << 6);
-	} else {
-		DDRC &= ~(1 << 6); PORTC &= ~(1 << 6);
+	// Make the num pad always a num pad.
+	if (!(usb_led & (1 << USB_LED_NUM_LOCK))) {
+		register_code(KC_NUMLOCK);
+		unregister_code(KC_NUMLOCK);
 	}
 
 	if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
