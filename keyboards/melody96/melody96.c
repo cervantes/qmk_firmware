@@ -10,8 +10,10 @@ void led_set_user(uint8_t usb_led) {
 
 	if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
 		DDRC |= (1 << 7); PORTC &= ~(1 << 7);
+		backlight_enable();
 	} else {
 		DDRC &= ~(1 << 7); PORTC &= ~(1 << 7);
+		backlight_disable();
 	}
 
 	if (usb_led & (1 << USB_LED_SCROLL_LOCK)) {
