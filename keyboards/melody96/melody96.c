@@ -1,5 +1,4 @@
 #include "melody96.h"
-
 void led_set_user(uint8_t usb_led) {
 
 	// Make the num pad always a num pad.
